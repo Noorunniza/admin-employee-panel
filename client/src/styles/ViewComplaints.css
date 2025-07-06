@@ -1,0 +1,181 @@
+/* ViewComplaints.css */
+
+.view-complaints-container {
+  min-height: 100vh;
+  padding: 20px 20px;
+  background: linear-gradient(120deg, #2a7b9b, #c3e1e3, #114169);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header */
+.view-complaints-container h2 {
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: -40px;
+  font-size: 32px;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Complaint Card */
+.complaint-card {
+  width: 100%;
+  max-width: 800px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.complaint-card:hover {
+  transform: translateY(-5px);
+  background-color: #ffffff;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
+.complaint-card p {
+  margin: 10px 0;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.complaint-card strong {
+  color: #2a7b9b;
+  font-weight: 600;
+}
+
+/* Status Badge */
+.status-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin-left: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Individual status colors */
+.status-badge.Pending {
+  background-color: #facc15; /* amber-400 */
+  color: #92400e;
+}
+
+.status-badge.In-Review {
+  background-color: #60a5fa; /* blue-400 */
+  color: #1e3a8a;
+}
+
+.status-badge.Resolved {
+  background-color: #4ade80; /* green-400 */
+  color: #064e3b;
+}
+
+.status-badge.Rejected {
+  background-color: #f87171; /* red-400 */
+  color: #7f1d1d;
+}
+
+/* No complaints */
+.no-complaints {
+  text-align: center;
+  color: #ffffff;
+  font-size: 18px;
+  margin-top: 60px;
+  opacity: 0.95;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .complaint-card {
+    padding: 20px;
+  }
+
+  .view-complaints-container h2 {
+    font-size: 26px;
+  }
+
+  .back-button {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  .complaint-card p {
+    font-size: 15px;
+  }
+
+  .status-badge {
+    font-size: 12px;
+    padding: 3px 10px;
+  }
+}
+.home-button {
+  align-self: flex-start;
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.home-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+.search-controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.date-input {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 15px;
+  outline: none;
+}
+
+.clear-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: #dc2626;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.clear-button:hover {
+  background-color: #b91c1c;
+}
+.status-input {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 15px;
+  outline: none;
+  width: 180px;
+}

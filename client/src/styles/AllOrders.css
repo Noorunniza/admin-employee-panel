@@ -1,0 +1,97 @@
+/* === Base Container === */
+.orders-container {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1e293b;
+  background: linear-gradient(90deg, rgba(42, 123, 155, 0.123) 0%, rgba(195, 225, 227, 1) 50%, rgba(17, 65, 105, 0.26) 100%);
+}
+
+/* === Back Button === */
+.back-btn {
+   background: linear-gradient(90deg, #2a7b9b97 0%, rgba(195, 225, 227, 1) 50%, rgba(32, 127, 206, 0.605) 100%);
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #1d4ed8;
+  box-shadow: 0 6px 14px rgba(30, 64, 175, 0.3);
+}
+
+/* === Date Filter Section === */
+.date-filter-container {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.order-search-input {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1.8px solid #cbd5e1;
+  background-color: #f8fafc;
+  color: #0f172a;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.order-search-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.35);
+}
+
+.clear-btn {
+  background-color: #e11d48;
+  color: #ffffff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.clear-btn:hover {
+  background-color: #be123c;
+  box-shadow: 0 4px 12px rgba(190, 18, 60, 0.2);
+}
+
+/* === Orders List === */
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* === Order Card === */
+.order-card {
+  background-color: #ffffff;
+  padding: 28px 36px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.order-card:hover {
+  transform: translateY(-4px);
+  background-color: #f0f9ff;
+  box-shadow: 0 18px 32px rgba(0, 0, 0, 0.08);
+}

@@ -1,0 +1,197 @@
+/* Overall Page */
+.order-manager {
+  padding: 32px 10px;
+  max-width: 1100px;
+  margin: auto;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  color: #1f2937;
+  background: linear-gradient(120deg, #e0f7fa, #fff);
+}
+
+.page-title {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* Order Cards */
+.orders-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.order-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-left: 5px solid #3b82f6;
+  transition: transform 0.2s;
+}
+
+.order-card:hover {
+  transform: translateY(-2px);
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 15px;
+  color: #374151;
+}
+
+.customer-info-toggle {
+  margin: 8px 0 12px;
+  color: #0ea5e9;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.customer-info {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #475569;
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  background-color: #f1f5f9;
+  border-radius: 8px;
+}
+
+/* Split Panels */
+.card-split {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.split-box {
+  flex: 1;
+  padding: 16px;
+  border-radius: 12px;
+  background: #f9fafb;
+  border-left: 5px solid #d1d5db;
+}
+
+.split-box.left {
+  border-left-color: #2563eb;
+}
+
+.split-box.right {
+  border-left-color: #10b981;
+}
+
+.assign-select {
+  width: 100%;
+  margin-top: 8px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 14px;
+}
+
+/* Order Items */
+.items-section {
+  margin-top: 16px;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 12px;
+}
+
+.item-card {
+  background: #f3f4f6;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #374151;
+}
+
+/* Status Badges */
+.status-badge {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.employee-completed {
+  background-color: #bbf7d0;
+  color: #065f46;
+}
+
+.agent-declined {
+  background-color: #fecaca;
+  color: #7f1d1d;
+}
+
+.agent-delivered-successful,
+.employee-delivered {
+  background-color: #34d399;
+  color: #065f46;
+}
+
+.agent-pending,
+.employee-pending {
+  background-color: #fcd34d;
+  color: #78350f;
+}
+
+/* Empty State */
+.no-orders {
+  text-align: center;
+  padding: 40px 0;
+  font-size: 18px;
+  color: #6b7280;
+}
+
+/* Loading/Error */
+.loading,
+.error {
+  text-align: center;
+  padding: 60px 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #ef4444;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .order-header {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .card-split {
+    flex-direction: column;
+  }
+
+  .assign-select {
+    font-size: 13px;
+  }
+}
+.back-button {
+  margin-bottom: 5px;
+  padding: 20px 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  background-color: #2563eb;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: background 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: #1e40af;
+}

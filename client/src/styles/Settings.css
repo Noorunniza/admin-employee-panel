@@ -1,0 +1,226 @@
+/* === Full Page Wrapper === */
+.settings-full-page {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(195, 225, 227, 1) 50%, rgba(17, 65, 105, 1) 100%);
+  padding-top: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* === Top Left Home Icon === */
+.top-home-icon {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 20;
+}
+
+.icon-btn {
+  background-color: #071533;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 6px 12px rgba(37, 99, 235, 0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.icon-btn:hover {
+  background-color: #303033;
+  transform: scale(1.05);
+}
+
+/* === Settings Wrapper (WIDER) === */
+.settings-page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 10px 20px 30px;
+  width: 100%;
+  max-width: 840px; /* ⬅️ Increased from 640px */
+  box-sizing: border-box;
+}
+
+/* === Settings Card (WIDER) === */
+.settings-card {
+  background-color: #ffffffee;
+  border-radius: 20px;
+  padding: 28px 32px;
+  width: 100%;
+  max-width: 700px; /* ⬅️ Increased from 480px */
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
+  -webkit-font-feature-settings: "liga" 1;
+  font-feature-settings: "liga" 1;
+}
+
+.settings-card:hover {
+  box-shadow: 0 20px 45px rgba(50, 50, 93, 0.15), 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* === Card Title === */
+.settings-card h2 {
+  font-size: 28px;
+  margin-bottom: 28px;
+  text-align: center;
+  color: #1e293b;
+  font-weight: 700;
+  letter-spacing: 1px;
+  user-select: none;
+}
+
+/* === Static Value Display === */
+.static-value {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: #f1f5f9;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 16px;
+  color: #475569;
+  user-select: text;
+  box-sizing: border-box;
+  gap: 12px;
+  flex-wrap: nowrap;
+  min-height: 48px;
+}
+
+.static-value > span {
+  flex-grow: 1;
+  word-break: break-word;
+}
+
+.static-value .btn.inline {
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+/* === Buttons === */
+.btn.inline {
+  padding: 7px 14px;
+  font-size: 14px;
+  margin-left: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn.edit.inline {
+  background-color: #354d81;
+  color: white;
+  border: none;
+}
+
+.btn.edit.inline:hover,
+.btn.edit.inline:focus {
+  background-color: #1e40af;
+  box-shadow: 0 6px 14px rgba(30, 64, 175, 0.45);
+  outline: none;
+}
+
+.btn.save.inline {
+  background-color: #16a34a;
+  color: white;
+  border: none;
+}
+
+.btn.save.inline:hover,
+.btn.save.inline:focus {
+  background-color: #15803d;
+  box-shadow: 0 6px 14px rgba(21, 128, 61, 0.45);
+  outline: none;
+}
+
+/* === Loading Message === */
+.settings-loading {
+  text-align: center;
+  padding: 70px 20px;
+  font-size: 18px;
+  color: #64748b;
+  user-select: none;
+}
+
+/* === Form Group === */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 10px;
+  font-size: 16px;
+  gap: 10px;
+  user-select: none;
+}
+
+/* === Inputs === */
+.form-group input[type="text"],
+.form-group input[type="file"] {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 16px;
+  border: 1.8px solid #cbd5e1;
+  border-radius: 12px;
+  background-color: #f9fafb;
+  color: #334155;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-weight: 500;
+  box-sizing: border-box;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="file"]:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.35);
+  outline: none;
+}
+
+/* === Logo Upload === */
+.logo-upload {
+  margin-bottom: 24px;
+}
+
+.logo-preview img {
+  border-radius: 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+  max-height: 130px;
+  object-fit: contain;
+  user-select: none;
+}
+
+/* === Responsive Fix === */
+@media (max-width: 768px) {
+  .settings-page-wrapper {
+    padding: 10px;
+  }
+
+  .settings-card {
+    max-width: 100%;
+    padding: 20px;
+  }
+}

@@ -1,0 +1,220 @@
+/* === Root Color Theme === */
+:root {
+  --primary-color: #2563eb;
+  --primary-light: #3b82f6;
+  --secondary-color: #10b981;
+  --background-color: #f1f5f9;
+  --card-bg: #ffffff;
+  --border-color: #e2e8f0;
+  --text-dark: #1f2937;
+  --text-light: #64748b;
+  --hover-accent: #cbd5e1;
+  --success-gradient-start: #22c55e;
+  --success-gradient-end: #16a34a;
+  --danger-gradient-start: #ef4444;
+  --danger-gradient-end: #b91c1c;
+}
+
+/* === Reset & Base === */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--background-color);
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* === Dashboard Layout === */
+.employee-dashboard {
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  min-height: 80vh;
+}
+
+/* === Top Bar === */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+/* === Heading Animation === */
+@keyframes slideFadeIn {
+  0% { opacity: 0; transform: translateY(-19px); }
+  100% { opacity: 5; transform: translateY(0); }
+}
+
+.employee-dashboard h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-align: center;
+  width: 100%;
+  animation: slideFadeIn 0.8s ease forwards;
+  margin-bottom: 16px;
+}
+
+/* === Settings Dropdown === */
+.settings-wrapper {
+  position: relative;
+}
+
+.settings-btn {
+  background: none;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+}
+
+.settings-btn:hover {
+  background-color: var(--hover-accent);
+}
+
+.settings-dropdown {
+  position: absolute;
+  top: 36px;
+  right: 0;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 180px;
+  z-index: 100;
+}
+
+.settings-dropdown button {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  background: none;
+  border: none;
+  font-size: 14px;
+  text-align: left;
+  cursor: pointer;
+  color: var(--text-dark);
+}
+
+.settings-dropdown button:hover {
+  background-color: var(--hover-accent);
+}
+
+/* === Employee Info === */
+@keyframes glowFade {
+  0% { box-shadow: 0 0 8px rgba(59, 130, 246, 0.1); }
+  50% { box-shadow: 0 0 16px rgba(59, 130, 246, 0.3); }
+  100% { box-shadow: 0 0 8px rgba(59, 130, 246, 0.1); }
+}
+
+.employee-info {
+  background-color: var(--card-bg);
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 20px;
+  animation: glowFade 2.5s infinite ease-in-out;
+}
+
+.employee-info p {
+  font-size: 16px;
+  margin: 6px 0;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* === Order Cards === */
+.employee-order-card {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* === Item Table === */
+.item-table {
+  width: 100%;
+  margin-top: 10px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.item-table th,
+.item-table td {
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  text-align: left;
+}
+
+.item-table th {
+  background-color: var(--hover-accent);
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* === Action Buttons === */
+.order-actions {
+  margin-top: 12px;
+}
+
+.complete-btn,
+.decline-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 8px;
+  margin-right: 8px;
+  transition: background 0.3s ease;
+  color: white;
+}
+
+.complete-btn {
+  background: linear-gradient(to right, var(--success-gradient-start), var(--success-gradient-end));
+}
+
+.complete-btn:hover {
+  opacity: 0.9;
+}
+
+.decline-btn {
+  background: linear-gradient(to right, var(--danger-gradient-start), var(--danger-gradient-end));
+}
+
+.decline-btn:hover {
+  opacity: 0.9;
+}
+
+/* === Decline Textarea === */
+.decline-reason-input {
+  width: 100%;
+  margin-top: 10px;
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 14px;
+  resize: vertical;
+  background-color: #f9fafb;
+  color: var(--text-dark);
+}
+
+/* === Empty State === */
+.empty-message {
+  text-align: center;
+  padding: 24px;
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+  margin-top: 20px;
+  color: var(--text-light);
+}

@@ -15,7 +15,7 @@ const ViewComplaints = () => {
       .then(res => {
         const sorted = res.data.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
         setComplaints(sorted);
-        setFilteredComplaints(sorted);
+        setFilteredComplaints(sorted.slice(0, 5)); // show latest 5 by default
       })
       .catch(err => console.error('Error:', err));
   }, []);
@@ -48,6 +48,10 @@ const ViewComplaints = () => {
       );
     }
 
+    if (!date && !statusSearch) {
+      filtered = complaints.slice(0, 5); // fallback to latest 5 if no search
+    }
+
     setFilteredComplaints(filtered);
   };
 
@@ -66,56 +70,59 @@ const ViewComplaints = () => {
   const handleClear = () => {
     setSearchDate('');
     setStatusQuery('');
-    setFilteredComplaints(complaints);
+    setFilteredComplaints(complaints.slice(0, 5)); // reset to latest 5
   };
 
   return (
-    <div className="view-complaints-container">
+    <div className="complaints-page">
       <button onClick={() => navigate('/admin-dashboard')} className="home-button" title="Go to Dashboard">
-        🏠
-      </button>
+  Back to Dashboard
+</button>
 
-      <h2>Complaints Management</h2>
 
-      {/* Search by date and status */}
-      <div className="search-controls">
-        <input
-          type="date"
-          value={searchDate}
-          onChange={handleDateChange}
-          className="date-input"
-        />
-        <input
-          type="text"
-          value={statusQuery}
-          onChange={handleStatusChange}
-          placeholder="Search by status..."
-          className="status-input"
-        />
-        <button onClick={handleClear} className="clear-button">Clear</button>
-      </div>
+      <div className="complaints-container">
+        <h2 className="complaints-title">Complaints Management</h2>
 
-      {filteredComplaints.length === 0 ? (
-        <p className="no-complaints">No complaints found.</p>
-      ) : (
-        filteredComplaints.map((c) => (
-          <div
-            key={c._id}
-            className="complaint-card"
-            onClick={() => navigate(`/view-complaints/${c._id}`)}
-          >
-            <p><strong>User ID:</strong> {c.user_id?._id || 'Unknown'}</p>
-            {/* <p><strong>Complaint:</strong> {c.complaints}</p> */}
-            <p><strong>Date:</strong> {new Date(c.created_at).toLocaleString()}</p>
-            <p>
-              <strong>Status:</strong>{' '}
-              <span className={getStatusClass(c.status)}>
-                {formatStatus(c.status)}
-              </span>
-            </p>
+        <div className="search-controls">
+          <input
+            type="date"
+            value={searchDate}
+            onChange={handleDateChange}
+            className="date-input"
+          />
+          <input
+            type="text"
+            value={statusQuery}
+            onChange={handleStatusChange}
+            placeholder="Search by status..."
+            className="status-input"
+          />
+          <button onClick={handleClear} className="clear-button">Clear</button>
+        </div>
+
+        {filteredComplaints.length === 0 ? (
+          <p className="no-complaints">No complaints found.</p>
+        ) : (
+          <div className="complaints-list">
+            {filteredComplaints.map((c) => (
+              <div
+                key={c._id}
+                className="complaint-card"
+                onClick={() => navigate(`/view-complaints/${c._id}`)}
+              >
+                <p><strong>User ID:</strong> {c.user_id?._id || 'Unknown'}</p>
+                <p><strong>Date:</strong> {new Date(c.created_at).toLocaleString()}</p>
+                <p>
+                  <strong>Status:</strong>{' '}
+                  <span className={getStatusClass(c.status)}>
+                    {formatStatus(c.status)}
+                  </span>
+                </p>
+              </div>
+            ))}
           </div>
-        ))
-      )}
+        )}
+      </div>
     </div>
   );
 };

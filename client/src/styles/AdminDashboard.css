@@ -11,13 +11,13 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
- background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(195, 225, 227, 1) 50%, rgba(17, 65, 105, 1) 100%);
+ background: linear-gradient(90deg,#2A7B9B);
 }
 
 
 /* Topbar */
 .topbar {
-background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(195, 225, 227, 1) 50%, rgba(17, 65, 105, 1) 100%);
+background: linear-gradient(90deg, #2A7B9B);
   color: white;
   padding: 25px 30px;
   display: flex;
@@ -40,7 +40,7 @@ background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(195, 225, 227,
 /* Sidebar */
 .sidebar {
   width: 250px;
- background: linear-gradient(180deg, rgba(42, 123, 155, 1) 0%, #75bcc1 50%, rgba(17, 65, 105, 1) 100%);
+ background: linear-gradient(180deg,#2A7B9B);
 
   color: white;
   padding-top: 20px;
@@ -149,13 +149,13 @@ background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(195, 225, 227,
 
 .datetime .date,
 .datetime .time {
-  background: rgba(255, 255, 255, 0.15);
+  /* background: rgba(255, 255, 255, 0.15); */
   padding: 6px 14px;
   border-radius: 20px;
   color: #fff;
   font-weight: 500;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-  animation: fadeGlow 2s infinite alternate;
+  /* box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  animation: fadeGlow 2s infinite alternate; */
 }
 
 @keyframes fadeGlow {

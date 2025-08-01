@@ -1,33 +1,41 @@
 /* === Base Container === */
-.orders-container {
+.page {
+   background-color:#e5f5f9;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
   padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.orders-container {
+  width: 100%;
   max-width: 1200px;
-  margin: auto;
+  padding: 40px 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #1e293b;
-  background: linear-gradient(90deg, rgba(42, 123, 155, 0.123) 0%, rgba(195, 225, 227, 1) 50%, rgba(17, 65, 105, 0.26) 100%);
+  background: whitesmoke;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
 }
+
+
 
 /* === Back Button === */
 .back-btn {
-   background: linear-gradient(90deg, #2a7b9b97 0%, rgba(195, 225, 227, 1) 50%, rgba(32, 127, 206, 0.605) 100%);
-  color: white;
+  
+  background-color: #2a7b9b; /* Solid professional blue */
+  color: #ffffff;
   border: none;
-  padding: 12px 18px;
-  border-radius: 10px;
-  font-size: 16px;
-  font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 24px;
-  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 .back-btn:hover {
-  background-color: #1d4ed8;
-  box-shadow: 0 6px 14px rgba(30, 64, 175, 0.3);
+    background-color: #256b87; 
 }
 
 /* === Date Filter Section === */
@@ -35,11 +43,13 @@
   display: flex;
   gap: 12px;
   align-items: center;
+  justify-content: center; /* <-- This centers content horizontally */
   margin-bottom: 30px;
 }
 
+
 .order-search-input {
-  width: 100%;
+  width: 50%;
   padding: 14px 18px;
   font-size: 16px;
   border-radius: 10px;

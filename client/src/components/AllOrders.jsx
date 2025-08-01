@@ -33,6 +33,7 @@ const AllOrders = () => {
   });
 
   return (
+    <div className="page">
     <div className="orders-container">
       {/* 🏠 Back to Dashboard */}
       <button className="back-btn" onClick={() => navigate('/admin-dashboard')}>
@@ -74,6 +75,7 @@ const AllOrders = () => {
           <p>No "Delivered Successful" orders found for this date.</p>
         )}
       </div>
+    </div>
     </div>
   );
 };
